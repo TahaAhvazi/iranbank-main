@@ -2,7 +2,7 @@ import 'package:chat/package.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Test());
+  runApp(const Test());
 }
 
 class Test extends StatefulWidget {
