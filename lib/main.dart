@@ -13,20 +13,180 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
+  BankType bankType = BankType.melat;
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color.fromARGB(221, 173, 144, 144),
+        backgroundColor: const Color.fromARGB(221, 173, 144, 144),
         body: Center(
-          child: MyHomePage(
-            height: 200,
-            width: 300,
-            title: "title",
-            frontText: Text("Front"),
-            rearText: Text("Rear"),
-            cartNumber: 123456789101112,
-            banktype: BankType.meli,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IranBanks(
+                height: 200,
+                width: 300,
+                title: "title",
+                frontText: const Text("Front"),
+                rearText: Text("Rear"),
+                cartNumber: 123456789101112,
+                banktype: bankType,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(height: 9),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.meli;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/melilogo.png"),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.ayandeh;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/ayandehlogo.png"),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.sepah;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/sepahlogo.png"),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.keshavarzi;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/keshavarzilogo.png"),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.maskan;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/maskanlogo.png"),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.sanatvamadan;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/sanatvamadanlogo.png"),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.saderat;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/saderatlogo.png"),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.taavon;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/taavonlogo.png"),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.postbank;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/postbanklogo.png"),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print("object");
+                      setState(() {
+                        bankType = BankType.refah;
+                      });
+                    },
+                    child: Container(
+                      height: 70,
+                      width: 70,
+                      color: Colors.white,
+                      child: Image.asset("assets/refahlogo.png"),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

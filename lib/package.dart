@@ -7,8 +7,8 @@ enum BankType {
   meli,
   ayandeh,
   sepah,
-  maskan,
   keshavarzi,
+  maskan,
   sanatvamadan,
   saderat,
   taavon,
@@ -17,8 +17,8 @@ enum BankType {
   melat,
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
+class IranBanks extends StatefulWidget {
+  const IranBanks({
     Key? key,
     required this.title,
     required this.rearText,
@@ -40,10 +40,10 @@ class MyHomePage extends StatefulWidget {
   final BankType banktype;
   @override
   // ignore: library_private_types_in_public_api
-  _MyHomePageState createState() => _MyHomePageState();
+  _IranBanksState createState() => _IranBanksState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _IranBanksState extends State<IranBanks> {
   late bool _showFrontSide;
   late bool _flipXAxis;
   int count = 0;
@@ -57,35 +57,72 @@ class _MyHomePageState extends State<MyHomePage> {
         imagePath = 'assets/melilogo.png';
         return imagePath;
       case BankType.ayandeh:
-        imagePath = 'assets/image_type2.png';
+        imagePath = 'assets/ayandehlogo.png';
         return imagePath;
       case BankType.sepah:
-        imagePath = 'assets/image_type3.png';
-        return imagePath;
-      case BankType.maskan:
-        imagePath = 'assets/image_type3.png';
+        imagePath = 'assets/sepahlogo.png';
         return imagePath;
       case BankType.keshavarzi:
-        imagePath = 'assets/image_type3.png';
+        imagePath = 'assets/keshavarzilogo.png';
+        return imagePath;
+      case BankType.maskan:
+        imagePath = 'assets/maskanlogo.png';
         return imagePath;
       case BankType.sanatvamadan:
-        imagePath = 'assets/image_type3.png';
+        imagePath = 'assets/sanatvamadanlogo.png';
         return imagePath;
       case BankType.saderat:
-        imagePath = 'assets/image_type3.png';
+        imagePath = 'assets/saderatlogo.png';
         return imagePath;
       case BankType.taavon:
-        imagePath = 'assets/image_type3.png';
+        imagePath = 'assets/taavonlogo.png';
         return imagePath;
       case BankType.postbank:
-        imagePath = 'assets/image_type3.png';
+        imagePath = 'assets/postbanklogo.png';
         return imagePath;
       case BankType.refah:
-        imagePath = 'assets/image_type3.png';
+        imagePath = 'assets/refahlogo.png';
         return imagePath;
       case BankType.melat:
-        imagePath = 'assets/image_type3.png';
+        imagePath = 'assets/melatlogo.png';
         return imagePath;
+    }
+  }
+
+  Color setColorBank() {
+    // Determine the Color based on the bankType
+    switch (widget.banktype) {
+      case BankType.meli:
+        return Colors.blue;
+      case BankType.ayandeh:
+        return const Color.fromARGB(255, 187, 106, 0);
+
+      case BankType.sepah:
+        return const Color.fromARGB(255, 185, 224, 255);
+
+      case BankType.keshavarzi:
+        return const Color.fromARGB(255, 243, 240, 33);
+
+      case BankType.maskan:
+        return const Color.fromARGB(255, 224, 91, 1);
+
+      case BankType.sanatvamadan:
+        return const Color.fromARGB(129, 0, 0, 0);
+
+      case BankType.saderat:
+        return const Color.fromARGB(174, 0, 17, 253);
+
+      case BankType.taavon:
+        return const Color.fromARGB(255, 88, 173, 241);
+
+      case BankType.postbank:
+        return const Color.fromARGB(255, 2, 146, 9);
+
+      case BankType.refah:
+        return const Color.fromARGB(255, 107, 33, 243);
+
+      case BankType.melat:
+        return Colors.red;
     }
   }
 
@@ -234,7 +271,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _buildFront() {
     return __buildLayout(
       key: const ValueKey(true),
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 252, 252, 252),
       cartNumber: widget.cartNumber,
       height: widget.height,
       width: widget.width,
@@ -247,11 +284,14 @@ class _MyHomePageState extends State<MyHomePage> {
             right: 0,
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(8)),
-              child: Image.asset(
-                "assets/back.png",
-                height: widget.heighBackImage,
-                width: widget.heighBackImage,
-                fit: BoxFit.fill,
+              child: ColorFiltered(
+                colorFilter: ColorFilter.mode(setColorBank(), BlendMode.color),
+                child: Image.asset(
+                  "assets/back.png",
+                  height: widget.heighBackImage,
+                  width: widget.heighBackImage,
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),
@@ -356,7 +396,7 @@ class _MyHomePageState extends State<MyHomePage> {
         width: widget.width,
         height: widget.height,
         cartNumber: widget.cartNumber,
-        backgroundColor: Colors.blue.shade700,
+        backgroundColor: setColorBank(),
         faceName: "Rear",
         child: Column(
           children: [
