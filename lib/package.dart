@@ -5,8 +5,16 @@ import 'package:flutter/material.dart';
 
 enum BankType {
   meli,
-  type2,
-  type3,
+  ayandeh,
+  sepah,
+  maskan,
+  keshavarzi,
+  sanatvamadan,
+  saderat,
+  taavon,
+  postbank,
+  refah,
+  melat,
 }
 
 class MyHomePage extends StatefulWidget {
@@ -48,10 +56,34 @@ class _MyHomePageState extends State<MyHomePage> {
       case BankType.meli:
         imagePath = 'assets/melilogo.png';
         return imagePath;
-      case BankType.type2:
+      case BankType.ayandeh:
         imagePath = 'assets/image_type2.png';
         return imagePath;
-      case BankType.type3:
+      case BankType.sepah:
+        imagePath = 'assets/image_type3.png';
+        return imagePath;
+      case BankType.maskan:
+        imagePath = 'assets/image_type3.png';
+        return imagePath;
+      case BankType.keshavarzi:
+        imagePath = 'assets/image_type3.png';
+        return imagePath;
+      case BankType.sanatvamadan:
+        imagePath = 'assets/image_type3.png';
+        return imagePath;
+      case BankType.saderat:
+        imagePath = 'assets/image_type3.png';
+        return imagePath;
+      case BankType.taavon:
+        imagePath = 'assets/image_type3.png';
+        return imagePath;
+      case BankType.postbank:
+        imagePath = 'assets/image_type3.png';
+        return imagePath;
+      case BankType.refah:
+        imagePath = 'assets/image_type3.png';
+        return imagePath;
+      case BankType.melat:
         imagePath = 'assets/image_type3.png';
         return imagePath;
     }
