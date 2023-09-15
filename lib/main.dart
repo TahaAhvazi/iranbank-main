@@ -28,20 +28,19 @@ class _TestState extends State<Test> {
                 width: 300,
                 title: "title",
                 frontText: const Text("Front"),
-                rearText: Text("Rear"),
+                rearText: const Text("Rear"),
                 cartNumber: 123456789101112,
                 banktype: bankType,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              SizedBox(height: 9),
+              const SizedBox(height: 9),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.meli;
                       });
@@ -55,7 +54,6 @@ class _TestState extends State<Test> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.ayandeh;
                       });
@@ -69,7 +67,6 @@ class _TestState extends State<Test> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.sepah;
                       });
@@ -83,7 +80,6 @@ class _TestState extends State<Test> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.keshavarzi;
                       });
@@ -97,7 +93,6 @@ class _TestState extends State<Test> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.maskan;
                       });
@@ -116,7 +111,6 @@ class _TestState extends State<Test> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.sanatvamadan;
                       });
@@ -130,7 +124,6 @@ class _TestState extends State<Test> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.saderat;
                       });
@@ -144,7 +137,6 @@ class _TestState extends State<Test> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.taavon;
                       });
@@ -158,7 +150,6 @@ class _TestState extends State<Test> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.postbank;
                       });
@@ -172,7 +163,6 @@ class _TestState extends State<Test> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print("object");
                       setState(() {
                         bankType = BankType.refah;
                       });
