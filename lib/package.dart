@@ -20,20 +20,26 @@ enum BankType {
 class IranBanks extends StatefulWidget {
   const IranBanks({
     Key? key,
-    required this.title,
-    required this.rearText,
-    required this.frontText,
     required this.cartNumber,
     required this.height,
     required this.width,
     required this.banktype,
     this.heighBackImage = 150,
     this.widthBackImage = 300,
+    required this.usernameAndFamily,
+    required this.expCartMonth,
+    required this.expCartYear,
+    required this.shabbaNumber,
+    required this.cvv2,
+    required this.shomarehHesab,
   }) : super(key: key);
-  final Widget rearText;
-  final Widget frontText;
-  final String title;
   final int cartNumber;
+  final String expCartMonth;
+  final String expCartYear;
+  final String shabbaNumber;
+  final String usernameAndFamily;
+  final String cvv2;
+  final String shomarehHesab;
   final double height, width;
   final double heighBackImage;
   final double widthBackImage;
@@ -318,11 +324,11 @@ class _IranBanksState extends State<IranBanks> {
                     ),
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 10.0),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
                   child: Text(
-                    "IR23453498753946593465",
-                    style: TextStyle(
+                    "IR${widget.shabbaNumber}",
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -342,14 +348,32 @@ class _IranBanksState extends State<IranBanks> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(widget.cartNumber.toString()),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                      Text(
+                        widget.cartNumber.toString(),
+                        style: const TextStyle(
+                          fontFamily: 'Kalameh',
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("1405/06"),
-                            Text("طاها  اهوازی"),
+                            Text(
+                              "${widget.expCartYear}/${widget.expCartMonth}",
+                              style: const TextStyle(
+                                fontFamily: 'Kalameh',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              widget.usernameAndFamily,
+                              style: const TextStyle(
+                                fontFamily: 'Kalameh',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       )
@@ -366,16 +390,28 @@ class _IranBanksState extends State<IranBanks> {
                     color: const Color.fromARGB(204, 255, 255, 255),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  child: const Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("CVV2:6118"),
-                            Text("12345678909876"),
+                            Text(
+                              "CVV2:${widget.cvv2}",
+                              style: const TextStyle(
+                                fontFamily: 'Kalameh',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              widget.shomarehHesab,
+                              style: const TextStyle(
+                                fontFamily: 'Kalameh',
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -432,15 +468,17 @@ class _IranBanksState extends State<IranBanks> {
                   Text(
                     "استفاده از این کارت صرفا مخصوص دارنده کارت میباشد",
                     style: TextStyle(
+                      fontFamily: 'Kalameh',
                       fontSize: 12,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     "در صورتی که صاحب کارت بانکی نیستید با بانک در میان بگذارید",
                     style: TextStyle(
+                      fontFamily: 'Kalameh',
                       fontSize: 12,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],

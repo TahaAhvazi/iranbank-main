@@ -26,10 +26,13 @@ class _TestState extends State<Test> {
               IranBanks(
                 height: 200,
                 width: 300,
-                title: "title",
-                frontText: const Text("Front"),
-                rearText: const Text("Rear"),
+                usernameAndFamily: "طاها اهوازی",
+                expCartMonth: "06",
+                expCartYear: "05",
+                shabbaNumber: "23456756736754747846",
+                cvv2: "6118",
                 cartNumber: 123456789101112,
+                shomarehHesab: "123445678452",
                 banktype: bankType,
               ),
               const SizedBox(
