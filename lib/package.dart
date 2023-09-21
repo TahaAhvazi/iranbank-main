@@ -24,14 +24,14 @@ class IranBanks extends StatefulWidget {
     required this.height,
     required this.width,
     required this.banktype,
-    this.heighBackImage = 150,
-    this.widthBackImage = 300,
     required this.usernameAndFamily,
     required this.expCartMonth,
     required this.expCartYear,
     required this.shabbaNumber,
     required this.cvv2,
     required this.shomarehHesab,
+    this.heighBackImage = 150,
+    this.widthBackImage = 300,
   }) : super(key: key);
   final int cartNumber;
   final String expCartMonth;

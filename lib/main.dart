@@ -18,7 +18,7 @@ class _TestState extends State<Test> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(221, 173, 144, 144),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -32,7 +32,7 @@ class _TestState extends State<Test> {
                 shabbaNumber: "23456756736754747846",
                 cvv2: "6118",
                 cartNumber: 123456789101112,
-                shomarehHesab: "123445678452",
+                shomarehHesab: "12344567845234",
                 banktype: bankType,
               ),
               const SizedBox(
